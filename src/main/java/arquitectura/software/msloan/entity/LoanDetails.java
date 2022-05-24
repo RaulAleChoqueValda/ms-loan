@@ -5,7 +5,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 @Entity
-@Table(name = "loan_details")
+@Table(name = "Loan_details")
 @NamedQueries({
         @NamedQuery(name = "LoanDetails.findAll", query = "SELECT l FROM LoanDetails l"),
         @NamedQuery(name = "LoanDetails.findByLoanDetailsId", query = "SELECT l FROM LoanDetails l WHERE l.loanDetailsId = :loanDetailsId"),

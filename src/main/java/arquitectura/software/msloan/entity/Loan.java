@@ -6,7 +6,7 @@ import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@Table(name = "loan_details")
+@Table(name = "Loan")
 @NamedQueries({
         @NamedQuery(name = "LoanDetails.findAll", query = "SELECT l FROM Loan l"),
         @NamedQuery(name = "LoanDetails.findByLoanId", query = "SELECT l FROM Loan l WHERE l.loanId = :loanId")})
