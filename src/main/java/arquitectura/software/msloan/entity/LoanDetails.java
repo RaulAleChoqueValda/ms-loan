@@ -23,7 +23,7 @@ public class LoanDetails implements Serializable {
     private Integer loanId;
     @Column(name = "loan_status")
     private String loanStatus;
-    @Column(name = "atatus")
+    @Column(name = "status")
     private Integer status;
 
     public LoanDetails() {
