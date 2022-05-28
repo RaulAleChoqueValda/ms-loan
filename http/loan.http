@@ -1,9 +1,9 @@
 ### Obtener lista de préstamos de libros
-GET http://localhost:8990/v1/loans
+GET http://localhost:8990/v1/api/loans
 Accept: application/json
 
 ####
-POST http://localhost:8990/v1/loans
+POST http://localhost:8990/v1/api/loans
 Content-Type: application/json
 
 {
