@@ -5,9 +5,9 @@ spring:
   application:
     name: ms-loan
   datasource:
-    url: ${URL_DATABASE:jdbc:postgresql://localhost:5432/library_db}
+    url: ${URL_DATABASE:jdbc:postgresql://localhost:5432/library}
     username: postgres
-    password: postgres
+    password: abcd1234
   jpa:
     hibernate:
       ddl-auto: update
