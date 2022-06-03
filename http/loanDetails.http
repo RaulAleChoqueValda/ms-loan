@@ -1,0 +1,14 @@
+### Obtener lista de préstamos de libros
+GET http://localhost:8990/v1/api/loanDetails
+Accept: application/json
+
+####
+POST http://localhost:8990/v1/api/loanDetails
+Content-Type: application/json
+
+{
+  "bookId": 2,
+  "loanId": 1,
+  "loanStatus":"prestado",
+  "status":"1"
+}

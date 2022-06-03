@@ -8,8 +8,8 @@ import java.util.Objects;
 @Entity
 @Table(name = "Loan")
 @NamedQueries({
-        @NamedQuery(name = "LoanDetails.findAll", query = "SELECT l FROM Loan l"),
-        @NamedQuery(name = "LoanDetails.findByLoanId", query = "SELECT l FROM Loan l WHERE l.loanId = :loanId")})
+        @NamedQuery(name = "Loan.findAll", query = "SELECT l FROM Loan l"),
+        @NamedQuery(name = "Loan.findByLoanId", query = "SELECT l FROM Loan l WHERE l.loanId = :loanId")})
 public class Loan implements Serializable {
 
     private static final long serialVersionUID = 1L;
