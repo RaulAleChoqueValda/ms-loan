@@ -2,12 +2,7 @@ spring:
   application:
     name: ms-loan
   datasource:
-<<<<<<< HEAD
     url: ${URL_DATABASE:jdbc:postgresql://localhost:5432/library}
-=======
-#    platform: postgres
-    url: ${URL_DATABASE:jdbc:postgresql://localhost:5432/library_db}
->>>>>>> ec121932c4d18a6c92e4f682b2736057e3a17638
     username: postgres
     password: abcd1234
   jpa:
@@ -20,6 +15,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQL81Dialect
 server:
   port: 8990
-  
+
 key: ABCDabcd1234
+
 
