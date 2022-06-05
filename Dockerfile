@@ -9,4 +9,4 @@ COPY ${DEPENDENCY}/BOOT-INF/classes /app
 ENV URL_DATABASE "jdbc:postgresql://localhost:5432/library_db"
 
 
-ENTRYPOINT ["java","-cp","app:app/lib/*","ucb.edu.bo.project.MsLoanApplication"]
+ENTRYPOINT ["java","-cp","app:app/lib/*","arquitectura.software.msloan.MsLoanApplication"]

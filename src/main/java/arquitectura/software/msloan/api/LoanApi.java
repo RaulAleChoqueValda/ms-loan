@@ -2,8 +2,14 @@ package arquitectura.software.msloan.api;
 
 import arquitectura.software.msloan.bl.LoanBl;
 import arquitectura.software.msloan.entity.Loan;
+import arquitectura.software.msloan.service.MSBookService;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -14,11 +20,15 @@ import java.util.List;
 public class LoanApi {
 
     private LoanBl loanBl;
+    private MSBookService msBookService;
+    private static Logger LOGGER = LoggerFactory.getLogger(LoanApi.class);
 
     @Autowired
-    public LoanApi (LoanBl loanBl){
+    public LoanApi (LoanBl loanBl, MSBookService msBookService){
         this.loanBl = loanBl;
+        this.msBookService = msBookService;
     }
+    
 
     @GetMapping(value = "/loans", produces = MediaType.APPLICATION_JSON_VALUE)
     public List<Loan> listAll() {
@@ -50,4 +60,13 @@ public class LoanApi {
         loanBl.deleteLoan(id);
         return "Borrado Exitosamente";
     }
+
+    @RequestMapping(value = "/books", method = RequestMethod.GET)
+    public ResponseEntity<List<?>> getBooks() {
+        LOGGER.info("Invocando al servicio REST");
+        var bookList = msBookService.getBooks();
+        LOGGER.info("Invocacion exitosa", bookList);
+        return new ResponseEntity<>(bookList, HttpStatus.OK);
+    }
+
 }
