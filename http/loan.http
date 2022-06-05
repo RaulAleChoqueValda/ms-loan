@@ -17,3 +17,7 @@ GET http://localhost:8990/v1/api/loans/clients
 Accept: application/json
 
 ####
+
+### Obtener lista de préstamos de libros
+GET http://localhost:8990/v1/api/books
+Accept: application/json
