@@ -59,8 +59,8 @@ public class LoanBl {
         return loanRepository.save(loanDB);
     }
 
-    public List<ClientDto> listClients() {
-        List<ClientDto>lista = this.clientService.getClients();
+    public List<?> listClients() {
+        List<?>lista = this.clientService.getClients();
         return lista;
     }
 

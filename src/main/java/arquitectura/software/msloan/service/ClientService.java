@@ -11,6 +11,6 @@ import java.util.List;
 @Service
 @FeignClient("ms-client")
 public interface ClientService {
-    @RequestMapping("v1/api/client")
-    public List<ClientDto> getClients();
+    @RequestMapping("v1/api/client/details")
+    public List<?> getClients();
 }

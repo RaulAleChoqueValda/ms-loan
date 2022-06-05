@@ -65,7 +65,7 @@ public class LoanApi {
     }
 
     @GetMapping(value = "/loans/clients", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<ClientDto> listaClientes()  {
+    public List<?> listaClientes()  {
         System.out.println("TAMANIO DE LA LISTA");
         return this.loanBl.listClients();
     }
