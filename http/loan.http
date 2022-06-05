@@ -1,5 +1,5 @@
 ### Obtener lista de préstamos de libros
-GET http://localhost:8080/v1/api/loans
+GET http://localhost:8990/v1/api/loans
 Accept: application/json
 
 ####
@@ -12,3 +12,8 @@ Content-Type: application/json
   "returnDate": "2022-06-10",
   "status":"1"
 }
+###
+GET http://localhost:8990/v1/api/loans/clients
+Accept: application/json
+
+####

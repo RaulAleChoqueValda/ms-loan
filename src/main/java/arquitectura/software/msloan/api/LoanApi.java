@@ -1,7 +1,9 @@
 package arquitectura.software.msloan.api;
 
 import arquitectura.software.msloan.bl.LoanBl;
+import arquitectura.software.msloan.dto.ClientDto;
 import arquitectura.software.msloan.entity.Loan;
+import arquitectura.software.msloan.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -49,5 +51,11 @@ public class LoanApi {
         System.out.println("Invocando al metodo DELETE");
         loanBl.deleteLoan(id);
         return "Borrado Exitosamente";
+    }
+
+    @GetMapping(value = "/loans/clients", produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<ClientDto> listaClientes()  {
+        System.out.println("TAMANIO DE LA LISTA");
+        return this.loanBl.listClients();
     }
 }

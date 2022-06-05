@@ -1,7 +1,9 @@
 package arquitectura.software.msloan.bl;
 
+import arquitectura.software.msloan.dto.ClientDto;
 import arquitectura.software.msloan.entity.Loan;
 import arquitectura.software.msloan.repository.LoanRepository;
+import arquitectura.software.msloan.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,10 +14,12 @@ import java.util.Objects;
 public class LoanBl {
 
     private LoanRepository loanRepository;
+    private ClientService clientService;
 
     @Autowired
-    public LoanBl (LoanRepository loanRepository){
+    public LoanBl (LoanRepository loanRepository, ClientService clientService){
         this.loanRepository = loanRepository;
+        this.clientService = clientService;
     }
 
     public List<Loan> findAll(){
@@ -54,4 +58,14 @@ public class LoanBl {
         }
         return loanRepository.save(loanDB);
     }
+
+    public List<ClientDto> listClients() {
+        List<ClientDto>lista = this.clientService.getClients();
+        return lista;
+    }
+
+    /***public Integer sizeList(){
+        var result=this.clientService.getClients();
+        return result.size();
+    }*/
 }
